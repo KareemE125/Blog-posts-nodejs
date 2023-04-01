@@ -1,0 +1,665 @@
+{
+	"info": {
+		"_postman_id": "5f873112-ee83-47cf-b61b-fcb1bf93afa7",
+		"name": "blog-posts-node.js",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14334852"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Kareem Ezzat\",\r\n    \"email\":\"Kareemezzat.125@gmail.com\",\r\n    \"phone\":\"01112233445\",\r\n    \"password\":\"Ke@1234\",\r\n    \"cPassword\":\"Ke@1234\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORGET PASSWORD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kareemezzat.125@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/forget-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Kareemezzat.125@gmail.com\",\r\n    \"password\":\"Ke@12348\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDEwMjM2MWMyZTM4MjUxZThjZTkwNSIsImVtYWlsIjoiRGFueUBnbWFpbC5jb20iLCJuYW1lIjoiRGFueSBHb2VyZ2UiLCJpYXQiOjE2Nzc3OTI5MDQsImV4cCI6MTY3Nzc5MzAyNH0.5Yy22bAYXRNr1tGHtqzd0KkOK62jujwFXcV4LZmwzxk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GET USER DATA",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNjkxMjUsImV4cCI6MTY4MDQ1NTUyNX0.usct91tsLH1TwW3-oXo3tcNWHaTmepuIpz1iw4Ncp90",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDEwMjM2MWMyZTM4MjUxZThjZTkwNSIsImVtYWlsIjoiRGFueUBnbWFpbC5jb20iLCJuYW1lIjoiRGFueSBHb2VyZ2UiLCJpYXQiOjE2Nzc3OTkzMjAsImV4cCI6MTY3Nzg4NTcyMH0.AQ396hT6QQcBtLAdsGykMIpHFItbEHotw2P-BhjmS4Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Dany Uio\",\r\n    \"age\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDBlNTUzNzkxOTU3MDRlMTYxYWNmYiIsImVtYWlsIjoiQWxpQGdtYWlsLmNvbSIsIm5hbWUiOiJBbGkgQWhtZWQiLCJpYXQiOjE2Nzc3ODQ3OTgsImV4cCI6MTY3Nzg3MTE5OH0.SLyUlPK2Ho9S866oT9Ez79Com-yuos0EFNgeATRAubw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PASSWORD",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNjkxMjUsImV4cCI6MTY4MDQ1NTUyNX0.usct91tsLH1TwW3-oXo3tcNWHaTmepuIpz1iw4Ncp90",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"Ke@12345\",\r\n    \"newPassword\":\"Ke@12348\",\r\n    \"cNewPassword\":\"Ke@12348\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/update-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SET PROFILE PIC",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNjkxMjUsImV4cCI6MTY4MDQ1NTUyNX0.usct91tsLH1TwW3-oXo3tcNWHaTmepuIpz1iw4Ncp90",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Kareem/Photos/Logos/83777372_2929165940456466_5879507737972310016_n.jpg"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/profile-pic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile-pic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDRmMmY4NTA4NWU4ODA1YWZhZGYyMiIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2NzgxMDcxMDEsImV4cCI6MTY3ODE5MzUwMX0.PXVVR9ACqSbkJj55eNPCrX2cgBCL4JO6-8gR-wPm26w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SEARCH Post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzODA5OTgsImV4cCI6MTY4MDQ2NzM5OH0.qmiEzJyyqmNeRdaEKErjVVdzk1hQEfBBT0--k6vnFs0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/search?searchTerm=NoDE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "NoDE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET My POSTS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Node.Js Exam in epic\",\r\n    \"text\": \"Stay fouced, think wisely, take your time and be aware of the deadline.\",\r\n    \"createdBy\": \"6428506a5d679d58900999b4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update POST",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Node.Js Exam in epic\",\r\n    \"text\": \"Stay fouced, think wisely, take your time and be aware of the deadline.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/642885f2db098cbb79ba483c/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"642885f2db098cbb79ba483c",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete POST",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/642885f2db098cbb79ba483c/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"642885f2db098cbb79ba483c",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/64289e4d0d16b224c9784be2/comment/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"64289e4d0d16b224c9784be2",
+								"comment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"Best One ISA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/6428905d6510e0cbc8a4a524/comment/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"6428905d6510e0cbc8a4a524",
+								"comment",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"ooppoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/642885f2db098cbb79ba483c/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"642885f2db098cbb79ba483c",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like & dislike",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjg1MDZhNWQ2NzlkNTg5MDA5OTliNCIsImVtYWlsIjoia2FyZWVtZXp6YXQuMTI1QGdtYWlsLmNvbSIsIm5hbWUiOiJLYXJlZW0gRXp6YXQiLCJpYXQiOjE2ODAzNzE4ODgsImV4cCI6MTY4MDQ1ODI4OH0.qqtJtlngZvXGU1G6o7yaZMlb1Uf8AeDo0ZGADkBMMRI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/posts/642885f2db098cbb79ba483c/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"642885f2db098cbb79ba483c",
+								"like"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Password</title>
+    <script>
+
+        function submitHandler() {
+            const urlSegments = window.location.pathname.split('/');
+            const token = urlSegments[urlSegments.length - 1];
+
+            const newPass = document.getElementById('newPass').value;
+            const cNewPass = document.getElementById('cNewPass').value;
+            
+            fetch("http://localhost:5000/api/v1/auth/reset-password", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "newPassword": newPass,
+                    "cNewPassword": cNewPass,
+                    "token": token,
+                }),
+            })
+        }
+
+
+    </script>
+</head>
+
+<body style="background: white; display: flex; justify-content: center;">
+    <form onsubmit="return false" style="
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            padding: 40px 60px;
+            border-radius: 10px;
+            background-color: rgba(141, 141, 141, 0.317);
+        ">
+        <h1 style="margin-bottom: 50px;">
+            Enter New Password
+        </h1>
+        <input id="newPass" type="password" placeholder="New Password" required style="
+        font-size: 20px;
+        padding: 8px 10px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        background: whitesmoke;
+    ">
+        <input id="cNewPass" type="password" required placeholder="Confirm New Password" style="
+                font-size: 20px;
+                padding: 8px 10px;
+                border-radius: 10px;
+                margin-bottom: 40px;
+                background: whitesmoke;
+            ">
+        <button type="submit" placeholder="Password" style="
+            font-size: 20px;
+            padding: 6px 25px;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            border-color: blue;" onclick="submitHandler()"> Submit </button>
+
+
+    </form>
+</body>
+
+</html>
